@@ -1,0 +1,125 @@
+@forward "./reset.scss";
+@forward "./utils.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  color: #343030;
+  background-color: #F6F3F3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  line-height: 150%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h6 {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  
+  background-color: #403432;
+  color: #f4f6f9;
+  width: 118px;
+  height: 48px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 1em;
+}
+
+button:hover {
+  background-color: #776763;
+}
+
+button:disabled {
+  background-color: #c1b4b1;
+  cursor: not-allowed;
+}
+
+button.loading {
+  background: linear-gradient(
+    90deg,
+    #403432 0%,
+    #cccccc 25%,
+    #403432 50%,
+    #cccccc 75%,
+    #403432 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 4s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 400% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+input[type="text"] {
+  all: unset;
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  min-width: 250px;
+  height: 48px;
+  font-weight: 700;
+  padding-left: 1em;
+  text-align: left;
+
+  &::placeholder {
+    color: #9f9f9f;
+  }
+}
+
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+    0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+    33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+    66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+    100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+}

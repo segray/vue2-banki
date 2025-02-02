@@ -1,0 +1,8 @@
+@use "sass:math";
+
+// линейная апроксимация адаптивных параметров
+@function approx($x1, $x2, $y1, $y2) {
+  $a: math.div($x2 - $x1, $y2 - $y1);
+  $b: $y1 * math.div($x1 - $x2, $y2 - $y1) + $x1;
+  @return clamp($x1, calc(100vw*#{$a} + $b), $x2);
+}
